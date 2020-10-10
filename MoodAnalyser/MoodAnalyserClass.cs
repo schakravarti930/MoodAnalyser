@@ -15,10 +15,17 @@ namespace MoodAnalyser
         }
         public string AnalyseMood()
         {
-            if(this.message.Contains("sad",StringComparison.OrdinalIgnoreCase))
-                return "SAD";
-            else 
+            try
+            {
+                if(this.message.Contains("sad",StringComparison.OrdinalIgnoreCase))
+                    return "SAD";
+                else 
+                    return "HAPPY";
+            }
+            catch
+            {
                 return "HAPPY";
+            }
         }
     }
 }
